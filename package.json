@@ -1,5 +1,5 @@
 {
-  "name": "firmware_updater_maker",
+  "name": "t_series_firmware_updater",
   "version": "0.1.0",
   "description": "Creates a firmware updater (command-line executable) for T-series LabJack devices. Cross-platform.",
   "main": "firmware_updater.js",

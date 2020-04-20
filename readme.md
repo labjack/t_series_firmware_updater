@@ -1,4 +1,4 @@
-# firmware_updater_maker
+# t_series_firmware_updater
 
 Creates a firmware updater (command-line executable) for T-series LabJack devices. Cross-platform.
 
@@ -15,7 +15,7 @@ Run on a 64-bit system.
 ## Setup
 
 ```
-cd firmware_updater_maker
+cd t_series_firmware_updater
 npm install
 npm install -g pkg
 ```
@@ -24,7 +24,7 @@ npm install -g pkg
 ## Create firmware updater
 
 ```
-cd firmware_updater_maker
+cd t_series_firmware_updater
 mkdir output/
 pkg --target node10-linux-x64   ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-linux-x64
 pkg --target node10-macos-x64   ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-macos-x64
