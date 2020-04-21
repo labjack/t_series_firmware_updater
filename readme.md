@@ -9,7 +9,7 @@ Uses `ljswitchboard-ljm_device_curator` and `pkg`.
 
 Requires ES6. Written / tested with Node v10.2.1.
 
-Run on a 64-bit system.
+WIP: Was run on a 64-bit system for 64-bit distributions, was run on armv7 for armv7 distribution.
 
 
 ## Setup
