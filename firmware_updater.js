@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { program } = require('commander')
 const q = require('q')
 const device_curator = require('ljswitchboard-ljm_device_curator')
@@ -24,12 +26,16 @@ class DeviceUpdater {
     }
 
     displayErrorAndQuit(err) {
-        console.log('displayErrorAndQuit')
         if (this.debug === true) {
             console.error(err)
         }
         else {
-            console.error(err.message)
+            if (typeof err.message !== 'undefined') {
+                console.error(err.message)
+            }
+            else {
+                console.error(err)
+            }
         }
     }
 

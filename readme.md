@@ -26,16 +26,16 @@ npm install -g pkg
 ```
 cd t_series_firmware_updater
 mkdir output/
-pkg --target node10-linux-x64   ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-linux-x64
-pkg --target node10-macos-x64   ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-macos-x64
-pkg --target node10-win-x64     ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-win-x64
+pkg --target node10-linux-x64   ./package.json --output ./output/labjack-firmware-updater-node10-linux-x64
+pkg --target node10-macos-x64   ./package.json --output ./output/labjack-firmware-updater-node10-macos-x64
+pkg --target node10-win-x64     ./package.json --output ./output/labjack-firmware-updater-node10-win-x64
 ```
 
 For a given platform, pkg [apparently needs both the native node binary and the target node binary](https://github.com/zeit/pkg/issues/869). There's [no 32-bit or arm node binaries for macOS](https://github.com/zeit/pkg-fetch/releases/), so I had to run the following on macOS, which [creates an executable that includes the script source](https://github.com/zeit/pkg-fetch/issues/68#issuecomment-511656541):
 
 ```
-pkg --target node10-linux-x86   ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-linux-x86 --no-bytecode --public --public-packages '*'
-pkg --target node10-linux-armv7 ./firmware_updater.js --output ./output/labjack-firmware-updater-node10-linux-armv7 --no-bytecode --public --public-packages '*'
+pkg --target node10-linux-x86   ./package.json --output ./output/labjack-firmware-updater-node10-linux-x86 --no-bytecode --public --public-packages '*'
+pkg --target node10-linux-armv7 ./package.json --output ./output/labjack-firmware-updater-node10-linux-armv7 --no-bytecode --public --public-packages '*'
 ```
 
 
@@ -58,8 +58,14 @@ Which is the same as:
 node ./firmware_updater.js
 ```
 
-Example updating the 470010835 T7 via USB:
+Example updating the T7 with serial number 470010835 via USB to a local firmware file:
 
 ```
 node firmware_updater.js -i 470010835 -f ~/Downloads/T7firmware_010292_2020-02-04_0.bin -d t7 -c USB
+```
+
+Similar, but updating by using a URL to specify the firmware file:
+
+```
+node firmware_updater.js -i 470010835 -f https://labjack.com/sites/default/files/firmware/T7firmware_010287_2019-12-06_1.bin
 ```
