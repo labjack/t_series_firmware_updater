@@ -26,7 +26,7 @@ npm install -g pkg
 ```
 
 
-## Building a firmware updater for distributable
+## Building a firmware updater for distribution
 
 Currently a build for a particular platform must be performed on that platform.
 
