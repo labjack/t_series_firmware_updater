@@ -16,7 +16,9 @@
     "eslint": "^6.8.0"
   },
   "pkg": {
-    "scripts": ["firmware_updater.js"],
+    "scripts": [
+      "firmware_updater.js"
+    ],
     "assets": [
       "node_modules/ljm-ffi/node_modules/ffi-napi/build/Release/ffi_bindings.node",
       "node_modules/ref-napi/build/Release/binding.node"
